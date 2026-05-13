@@ -1,0 +1,40 @@
+---
+title: Org snapshot data
+owner: COS
+status: draft
+last_reviewed: 2026-04-06
+---
+
+The **People app** (AlliedOS) is the system of record for org **modelling**. The handbook stores a **published JSON snapshot** so docs builds are reproducible and changes are reviewable in Git.
+
+## Files (this repo)
+
+| File | Purpose |
+|------|---------|
+| [`data/org/current.json`](https://github.com/a2i-technology/docs/blob/main/data/org/current.json) | Default snapshot consumed by the [Org Chart](./org-chart) page |
+| `data/org/org-snapshot.schema.json` | JSON Schema (draft-07); **contract** for exports from the People app |
+
+Additional scenarios (e.g. `y3-approved.json`) may be added later with the **same** schema; point MDX or a second doc at those files if needed.
+
+## Schema version
+
+- **`schema_version`** in the JSON must match a version the handbook validator accepts (see `SUPPORTED_SCHEMA_VERSIONS` in `scripts/org-snapshot-validate.mjs`).
+- When you change the shape of the data, **bump** `schema_version`, update the schema file, update the validator allow-list, and coordinate the People app export.
+
+## Publishing workflow (MVP)
+
+1. Finalise structure in the **People app** and export **JSON** that matches `org-snapshot.schema.json`.
+2. Replace `data/org/current.json` in this repo (or add a PR with the new file).
+3. Locally run `npm run check:org-snapshot` (or rely on `prebuild`).
+4. Merge; the handbook [Org Chart](./org-chart) updates on deploy.
+
+Avoid hand-editing without validation — the build will fail if the file is invalid.
+
+## People app integration
+
+When the People app is built, copy `data/org/org-snapshot.schema.json` into that repo and validate exports in CI using the same invariants as `scripts/org-snapshot-validate.mjs`.
+
+## Related
+
+- [Org Chart](./org-chart) — visualises `current.json`
+- [Functions](./functions) — use `metadata.function` keys consistently where possible

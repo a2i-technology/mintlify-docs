@@ -5,3 +5,7 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Rationale internal working files
+rationale/_archived/
+rationale/_agent-handoffs/

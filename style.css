@@ -1,3 +1,58 @@
+/* Neue Haas Grotesk Text */
+@font-face {
+  font-family: 'Haas Grotesk Text Web';
+  src: url('/fonts/NeueHaasGroteskText-55Roman-Web.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haas Grotesk Text Web';
+  src: url('/fonts/NeueHaasGroteskText-56Italic-Web.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haas Grotesk Text Web';
+  src: url('/fonts/NeueHaasGroteskText-65Medium-Web.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haas Grotesk Text Web';
+  src: url('/fonts/NeueHaasGroteskText-66MediumItalic-Web.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haas Grotesk Text Web';
+  src: url('/fonts/NeueHaasGroteskText-75Bold-Web.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haas Grotesk Text Web';
+  src: url('/fonts/NeueHaasGroteskText-76BoldItalic-Web.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Apply Allied font globally */
+:root {
+  --font-body: 'Haas Grotesk Text Web', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-headings: 'Haas Grotesk Text Web', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
 /* table of contents: chevron next to the active (deepest) section */
 toc-item > a {
   position: relative;
@@ -17,30 +72,20 @@ toc-item[data-active-deepest] > a::before {
   pointer-events: none;
 }
 
-/* topbar logo: render smaller than its natural width */
+/* Scale wordmark logo */
 #navbar a[href="/"] img,
 #navbar a[href="/"] svg,
 #sidebar a[href="/"] img,
-#sidebar a[href="/"] svg {
-  max-width: 14rem;
-  height: auto;
+#sidebar a[href="/"] svg,
+nav img[alt],
+[data-component-name="logo"] img,
+a[href="/"] img {
+  max-height: 2rem !important;
+  height: 2rem !important;
+  width: auto !important;
 }
 
 a[nav-tabs-item] {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.kb-feature-card {
-  background-color: rgb(var(--foreground-light, 17 24 39));
-}
-
-.kb-feature-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url('/images/texture.png');
-  background-position: center;
-  background-size: cover;
-  opacity: 0.875;
 }

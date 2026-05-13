@@ -1,0 +1,97 @@
+---
+title: Writing style
+owner: COS
+status: draft
+---
+
+This page defines **how** we write in the Org Repo: tone, plain English, markdown habits, and **shared vocabulary** for official vs in-progress content. **Structural rules** (IDs, filenames, YAML) are in **[Handbook standards](./standards)**.
+
+---
+
+## Audience and tone
+
+- **Definitive handbook pages** (strategy, policy, systems, published guides) should read as **clear, direct, and usable** — someone should be able to act or decide without decoding marketing language.
+- Prefer **concrete actors and outcomes** (“The CEO approves…”, “Teams store drafts in…”) over abstract claims (“World-class synergy”).
+- **Investor-style or sales prose** is **not** the default for internal definitive pages. External narrative may exist elsewhere; reconcile wording into the handbook explicitly when it becomes official.
+- **Second person** (“you”) is fine in guides and procedures; **neutral third person** often fits policy and strategy sections.
+
+---
+
+## Plain English
+
+- **Short sentences.** Split long chains into two sentences.
+- **One idea per sentence** where possible.
+- **Active voice** when it clarifies who acts: “The owner updates the index” not “The index should be updated.”
+- **Acronyms and jargon** — Spell out on **first use** in a page, then acronym in parentheses if helpful: *Product lifecycle management (PLM)*. Do not assume readers know internal codenames without a link or gloss.
+- **Avoid** vague intensifiers (“very”, “extremely”, “best-in-class”) unless tied to a measurable or defined standard.
+- **Prefer** specific verbs (maintain, approve, publish, archive) over vague ones (handle, deal with, leverage).
+
+---
+
+## Spelling and punctuation
+
+- Default to **British English** spelling in the handbook unless a proper name or standard (e.g. ISO, product name) dictates otherwise.
+
+---
+
+## Headings
+
+- Markdown uses default styles (like in Word) with the biggest called Header 1 or H1, then H2 and so on.
+- One **H1** per page (from content or aligned with `title` — see [Handbook standards](./standards#titles-h1-and-sidebar)).
+- Use **H2** for major sections, **H3** for subsections. Avoid skipping levels (do not jump from H2 to H4).
+- Heading text should be **descriptive** in sidebar/Table Of Contents (eg “Policy ID format” not “Details”).
+
+---
+
+## Lists and emphasis
+
+- **Unordered** lists: use `-` consistently (see [Handbook standards — Lists](./standards#lists-markdown-and-tables)).
+- **Ordered** lists: use `1.` `2.` when **order matters** (steps, sequences).
+- **Bold** — Use sparingly for **key terms on first definition** or short labels in a dense paragraph; avoid whole sentences in bold.
+- *Italics* — Use for emphasis or document titles, not large blocks.
+
+---
+
+## Links and citations
+
+- Link to **definitive** pages when you refer to binding or official material; avoid treating drafts or Drive-only copies as authority.
+- When referencing **policies or decisions**, cite **`POL-*`** or **`DEC-*`** and link to the target page.
+- Prefer stable paths; after renames, update links (the site build checks broken links).
+
+---
+
+## Tables and structure
+
+- Use **tables** for comparisons, ownership matrices, and “if / then” summaries.
+- Keep tables **readable in source**; avoid unnecessary merged complexity in markdown.
+
+---
+## Vocabulary: definitive and working materials {#vocabulary-definitive-and-working}
+
+We separate **what is official in Git** from **everything else** until it is published through the agreed process.
+
+- **Definitive record** (or **definitive version**) — Content **published in this repository** that we treat as **official** (policy, strategy, governance records, and other material others should rely on).
+- **Working materials** — Drafts and collaboration **outside** that official corpus until promoted: shared drives, local files, chat, tickets, whiteboards, and similar. Not “less valuable”—**different lifecycle and authority**.
+
+**Wording habits**
+
+- In **general org and handbook prose**, prefer **definitive** over **canonical**. (*Canonical* stays fine in technical contexts where it is standard, e.g. data models.)
+- Use **versions** for **document lifecycle** (draft → reviewed → definitive). Use **work** for **activity and artefacts** (issues, threads, exploratory notes).
+- If **truth** reads oddly, prefer **definitive record**, **official**, or **published** instead of stretching “truth” as a noun.
+
+**Summary**
+
+| Term | Use for |
+|------|---------|
+| **Definitive (record / version)** | Official org content in Git |
+| **Working materials / drafts / WIP** | Collaboration and exploration until published here |
+| **Versions** | Lifecycle of a document or policy |
+| **Work** | Activity and artefacts (e.g. Linear, Slack) |
+
+---
+
+## Related
+
+- [Handbook standards](./standards) — IDs, filenames, front matter
+- [Strategy](../strategy) — What belongs in strategy content
+- [Contributing overview](./) — How to publish changes

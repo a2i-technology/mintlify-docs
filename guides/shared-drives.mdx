@@ -1,0 +1,167 @@
+---
+title: Provision a shared drive
+owner: DDE
+status: draft
+---
+
+This guide walks through provisioning a new Google Shared Drive — from deciding when one is needed, through naming, access management, theming, and internal folder structure.
+
+## Why we use Shared Drives
+
+Shared Drives serve three purposes at Allied:
+
+1. **Access management** — scope visibility to the people who need it.
+2. **Data compartmentalisation** — keep sensitive or project-specific material separate from the general workspace.
+3. **Partner collaboration** — share a controlled space with external organisations without exposing internal material.
+
+## When to create a Shared Drive
+
+Not every piece of work needs its own drive. The typical lifecycle is:
+
+1. **Start a work thread** in the core [Allied Drive](https://drive.google.com/drive/u/0/folders/0AIueTlMtwUAjUk9PVA). All core Allied employees already have access to this drive.
+2. **Provision a Shared Drive** when the thread grows enough to warrant its own access boundary, or when access restrictions are required from the outset (e.g. partner-facing work, sensitive commercial material).
+
+If the work is short-lived and low-sensitivity, the core Allied Drive is usually sufficient.
+
+## Naming conventions
+
+Drive names signal whether a drive is internal or shared externally, and what it relates to.
+
+### Internal drives
+
+Template: **`Allied || [PJT ||] {area or project name}`**
+
+Fields are separated by a double pipe (`||`). Include the `PJT` marker when the drive relates to a specific project rather than a standing function.
+
+| Example | Explanation |
+|---|---|
+| `Allied \|\| PJT \|\| Emberlence` | Project-specific drive for the Emberlence engagement |
+| `Allied \|\| Finance` | Standing functional drive for Finance |
+
+### External (partner-shared) drives
+
+Template: **`Allied <> {partner_codename}`**
+
+Fields are separated by opposing angle brackets (`<>`). Use the partner's codename, not their legal entity name.
+
+| Example | Explanation |
+|---|---|
+| `Allied <> Orion` | Drive shared with the partner codenamed Orion |
+
+## Visual theming
+
+Apply a distinct theme image to each drive so that internal and external drives are immediately distinguishable in the Google Drive sidebar.
+
+| Drive type | Theme | Preview |
+|---|---|---|
+| Internal | Teal background with Allied logo | ![Internal drive theme](/images/internal-drive-allied.png) |
+| External | Grey-green background with overlapping Allied + partner motif | ![External drive theme](/images/external-drive-orion.png) |
+
+To set the theme: open the Shared Drive → click the drive name at the top → **Change theme** → upload the appropriate image.
+
+## Access management
+
+### Managers
+
+For business continuity, assign **at least two managers** to every Shared Drive. Managers can modify membership and drive settings if one person is unavailable.
+
+### Use Google Groups, not individual accounts
+
+Manage membership through a dedicated **Google Group** rather than adding employees one by one. This keeps access auditable, simplifies onboarding/offboarding, and avoids per-drive permission drift.
+
+| Scope | Google Group |
+|---|---|
+| All Allied employees | `team@a2i.network` |
+| Finance team | `finance@a2i.network` |
+| Emberlence project | `emberlence@a2i.network` |
+
+When provisioning a new drive, either use an existing group or request a new one that matches the drive's audience.
+
+## Folder structure — PARA + Inbox
+
+Managers are free to organise the interior of a drive as they see fit. However, many existing drives follow the **PARA** framework with an **Inbox** folder, and adopting it is recommended for consistency.
+
+### Top-level folders
+
+```
+0. Inbox
+1. Projects
+2. Areas
+3. Resources
+4. Archive
+```
+
+Numbering keeps folders consistently ordered across platforms.
+
+### 0. Inbox
+
+Temporary landing zone for new or unclassified items.
+
+- Use when a file arrives but has not yet been categorised, or material is uploaded quickly during a meeting.
+- Items should not live here permanently — review and move them at least weekly.
+
+### 1. Projects
+
+Active initiatives with a **defined outcome and end state**.
+
+- One folder per project.
+- Include working documents, planning material, and outputs.
+- When a project completes, move its folder to **Archive**.
+
+> If the work will be finished at some point, it is a **Project**.
+
+### 2. Areas
+
+Ongoing responsibilities that must be **maintained indefinitely**.
+
+- Organise by responsibility domain (e.g. Finance, Security, Hiring).
+- Store policies, standards, and operational documentation.
+- Projects *related* to an area still belong in **Projects**, not nested inside the area.
+
+> If it represents something the organisation must continuously maintain, it is an **Area**.
+
+### 3. Resources
+
+Reference material **not tied to a specific project or responsibility**.
+
+- Industry reports, market research, technical documentation, design references.
+- Organise by topic; avoid storing working documents here.
+
+> If it is useful knowledge but not active work, it is a **Resource**.
+
+### 4. Archive
+
+Inactive material from any other category.
+
+- Move completed projects, retired documents, and superseded material here.
+- Preserves history while keeping active folders clean.
+- Do not delete unless required for compliance or storage limits.
+
+### Quick decision framework
+
+| Question | Destination |
+|---|---|
+| Temporary and not yet sorted? | **Inbox** |
+| Active work with a clear outcome? | **Projects** |
+| Ongoing responsibility we maintain? | **Areas** |
+| Useful reference material only? | **Resources** |
+| No longer active? | **Archive** |
+
+### Common mistakes
+
+- **Organising by topic instead of action** — avoid folders like "AI" or "Strategy" that mix active work and reference material.
+- **Nesting projects inside Areas** — areas describe responsibilities; projects belong in Projects.
+- **Leaving items permanently in Inbox** — Inbox is a staging area, not storage.
+- **Keeping finished projects active** — move them to Archive once completed.
+
+## Setup checklist
+
+Use this as a quick reference when provisioning a new Shared Drive:
+
+- [ ] Determine whether the drive is internal or external.
+- [ ] Name the drive following the appropriate convention.
+- [ ] Upload the correct theme image (teal for internal, grey-green for external).
+- [ ] Assign at least two managers.
+- [ ] Create or identify the appropriate Google Group for membership.
+- [ ] Add the Google Group to the drive with the correct permission level.
+- [ ] Create the PARA + Inbox top-level folder structure (recommended).

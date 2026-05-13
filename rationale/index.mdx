@@ -1,0 +1,101 @@
+---
+title: Rationale
+owner: COS
+status: draft
+---
+
+Think of **Rationale** like a **Wikipedia Talk page**: background on **why** the handbook is **structured and worded** as it is. It is for **maintainers** and for **capturing context when you change** the org repo—not primary reading for day-to-day operations, and **not** a substitute for **policy** (`policy/`) or **formal decisions** ([decision log](../governance/decision-log)).
+
+The **Rationale** category is **hidden from the Org Repo sidebar** (see site config); pages stay **published** at their URLs. A subtle **Rationale** link at the foot of each definitive page points to the mirror when one exists. Author-facing rules (including vocabulary for definitive vs working materials) live under **[Contributing](../contributing)**.
+
+## Purpose
+
+- Record **design and language choices** for the knowledge system (folders, naming, templates) so they do not read as arbitrary.
+- Give **humans and AlliedGPT** a place for **“why”** and **show your working**, separate from **what is binding** in the definitive handbook.
+- Reduce **cyclical “improvement”** and churn: future editors and agentic workers can see what was already considered.
+
+## Relationship to other artifacts
+
+| Artifact | Role |
+|----------|------|
+| **Definitive handbook** (`strategy/`, `policy/`, `systems/`, …) | What we treat as true for operations and governance. |
+| **[Decision log](../governance/decision-log)** | Dated organisational resolutions (`DEC-*`). Each entry may include its own *Rationale* section for that decision. |
+| **Git (commits, PRs)** | *What* changed, *when*, and *who*; diffs and short messages. |
+| **Rationale** (`rationale/`) | Ongoing commentary on **handbook structure and wording**—not a second copy of binding content. |
+
+## Structure
+
+Rationale pages live under `rationale/` and mirror the handbook section they comment on (e.g. `rationale/strategy/index.md` covers `strategy/index.md`). Not every handbook page needs a rationale — create one when there is genuine design context worth recording.
+
+When a definitive page is **removed or renamed**, **archive** the rationale under `rationale/_archived/` (see `rationale/_archived/README.md` in the repo) with tombstone front matter so reasoning stays discoverable.
+
+## Meta: rationale for Rationale
+
+We expect **AlliedGPT** and, later, **agentic workers** to help maintain this repo. Without stored context, tools tend to **re-derive** structure from the current tree alone, which invites repeated reframes. This section is the lightweight **organisational memory** for handbook *design*—complementary to ADR-style thinking (decision context, alternatives, consequences) applied to **information architecture**, not to runtime product architecture.
+
+## AlliedGPT and agents
+
+- Treat Rationale as **secondary**: it **must not override** definitive policy, strategy, or decision records.
+- Prefer **citations to definitive paths** when answering “what must we do?”; use Rationale for “why is it written or organised this way?”
+- Many stubs say *To be written*; empty or generic pages add little until filled—**fill notes when you change** the definitive page or folder structure.
+
+## Agent handoffs
+
+**Purpose:** Cursor and other agents do not share a durable, unredacted transcript with the whole team. **Git-tracked handoff files** capture options, rejections, and paths touched so a later editor (human or agent) can update mirrored rationale **Design notes** without re-deriving everything.
+
+- **Location:** `rationale/_agent-handoffs/` in this repo (alongside the mirror tree). Same idea as `rationale/_archived/`: **excluded from the Docusaurus docs build** via `docusaurus.config.ts` so these files are **not** published as handbook pages. See `rationale/_agent-handoffs/README.md` for naming and conventions.
+- **Workflow:** specialists append one handoff per thread or milestone; maintainers **distil** into the relevant `rationale/...` stub. Handoffs may be verbose; rationale pages stay short and point at definitive paths.
+
+### Standard prompt for specialist agents
+
+Copy the following verbatim when you want an agent to leave a structured handoff before closing a task:
+
+```markdown
+Before you finish this task, append a handoff file for the Rationale maintainer.
+
+1. Create or update under `docs/allied-org-repo/rationale/_agent-handoffs/` a new markdown file named `YYYY-MM-DD-<short-slug>.md` (use today's date and a 3–6 word kebab-case slug for this thread's topic).
+
+2. In that file, use exactly these sections:
+
+## Definitive paths touched
+- List repo paths you edited or that your recommendations assume (e.g. `GitHub/docs/systems/org/org-chart.mdx`).
+
+## Questions answered / outcomes
+- Bullet summary of what you decided or recommended.
+
+## Options considered (and rejected)
+- For each: one line on why it was rejected.
+
+## Key references
+- Links or paths to docs you used (`org-reset/...`, `organisational-architecture.md`, etc.).
+
+## Risks, open questions, follow-ups
+- Anything uncertain or needing human confirmation.
+
+## Quotes worth preserving
+- Short verbatim snippets (max ~2–3 sentences each) if they capture nuance; otherwise paraphrase.
+
+Do not paste full policy or strategy text here—summarise and point to paths.
+```
+
+**Non-goals:** storing binding rules here; replacing the decision log; duplicating strategy intent in full.
+
+## What lives here
+
+- Design and language choices for the **knowledge system** (folders, naming, templates).
+- Short essays or notes so the model does not read as **arbitrary**.
+
+Each rationale page must **tie back to the handbook**: open with **“Applies to”** (or **“What this explains”**) and include **markdown links** to every definitive page the note discusses. Cite **IDs** in prose where they exist (`POL-*`, `DEC-*`). Optional YAML `applies_to:` paths may be added for tooling; **links in the body are still required**. Full rules are under **[Contributing](../contributing)** (rationale mirror).
+
+## What does *not* live here
+
+- **Binding rules** → `policy/`
+- **What the organisation resolved on a given date** → [Governance decision log](../governance/decision-log)
+- **Strategy intent** (what we pursue) → `strategy/` — rationale may **link** there, not duplicate it.
+
+## Contents
+
+- **[Contributing](../contributing)** — Author-facing rules, including vocabulary for definitive vs working materials.
+- **Rationale pages** — Design commentary for handbook sections that have meaningful context to record.
+- **Archived rationale** — Tombstoned notes under `rationale/_archived/` when definitive pages go away.
+- **Agent handoffs** — Structured agent dumps under `rationale/_agent-handoffs/` (excluded from site build); see [Agent handoffs](#agent-handoffs) above.

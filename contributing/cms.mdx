@@ -1,0 +1,83 @@
+---
+title: Easy edit
+owner: DDE
+status: draft
+---
+
+Most handbook changes go through the **CMS**. You edit and add content in the admin interface; **you do not need Git** for this path.
+
+We have a relatively straightforward CMS at the moment. We can build out a more feature-rich one in due course, if helpful. 
+
+---
+
+## 1. Get access
+
+**You will need:**
+
+1. **A free GitHub account** using your **work email**  
+   - Go to [github.com/join](https://github.com/join)  
+   - Sign up with your Allied work email so we can grant you access to the repo.
+
+2. **Repo access**  
+   - Submit a support request asking to be added to the docs repository (use **Get support** in the site header).  
+   - Include your name and the work email you used for GitHub.  
+   - Once you are added as a collaborator, you can sign into the CMS.
+
+---
+
+## 2. Open the CMS
+
+The same **box-arrow link** to the CMS is on the [home page](/): in the **Contribute** section, use the arrow icon next to the section title to open the CMS in a new tab. You can also use the link here:
+
+- **[Open CMS ↗](https://docs.a2i.network/admin/)** (opens in new tab)  
+- Sign in with your **GitHub account**.  
+- You'll see the collection list in the left sidebar.
+
+---
+
+## 3. Collection structure
+
+The CMS left sidebar should list collections in the same order as the published Org Repo. Collection labels in the admin match the labels you see there (for example Strategy — Operating concepts, Policy — Enterprise). Use the collection that matches the file or folder you would open in the repo.
+
+
+**Programme collections** (e.g. EMBERLANCE, PHOENIX) are defined in the CMS config; adding or renaming a programme or moving it between Active / Paused / Completed / Archived is a **developer change** (config + git folder move). Request via **Get support**.
+
+**Rationale** pages under `rationale/` are **not** in the CMS; edit those in Git or via an [assisted edit](./assisted-edit).
+
+### 3.1 When you can add a new page — and when you only edit existing ones
+
+**What you need to know:**
+
+- **Some collections only contain a small, fixed set of pages** (for example the handbook home page, the operations overview, or the policy index and the three “hub” pages for policy, procedures, and templates). In those collections you **open the page you need and edit it**. You are **not** meant to use **New** there to invent extra top-level handbook files — those spots are defined on purpose.
+- **Most other collections work like a folder of handbook pages**. You can **open an existing page** to edit it, or click **New** to **add another page** in that same area (for example a new guide, or a new page under Strategy — Market), when that fits how the handbook is structured.
+
+**File type:** pages under **Contributing** are saved as **MDX**. Almost all other handbook content is ordinary **Markdown** (`.md`).
+
+### 3.2 Fields (what you fill in)
+
+| Kind | Fields |
+|------|--------|
+| **Most handbook pages** | **Title**, **Doc owner** (optional dropdown), optional **Sidebar position**, **Body** (markdown). |
+| **Contributing pages** | Same as handbook (including **Doc owner**). Body supports MDX. |
+| **Updates (blog)** | **Title**, **Publish date**, **Author(s)**, **Body**, optional **Tags** — not the same as handbook fields. Use `<!-- truncate -->` in the body where you want the updates list preview to end (see the CMS hint). |
+| **Programme docs** (Operations — *programme*) | **Title**, optional **Sidebar label** (e.g. `Links` for the links doc), **Doc owner**, **Status** (display-only; folder location is source of truth), optional **Priority**, optional **Start date**, optional **Sidebar position**, **Body**. |
+
+---
+
+## 4. Publishing flow
+
+The CMS uses **editorial workflow**: each save creates or updates a **draft** on a branch with a **pull request** against `main`. Nothing goes live until the PR is merged.
+
+1. **Edit** — Open the right collection, open the entry (or **New** for a folder collection), change fields, **Save**.  
+2. **Review** — In the CMS, open drafts and move them through **Draft** → **In review** → **Ready** (or your team’s workflow) as agreed.  
+3. **Publish** — **Publish** merges the PR into `main`. The public site updates after the build and deploy for `main` complete.
+
+If you need a change the CMS cannot represent (new programme collection, `rationale/`, structural moves, bulk edits), use an [assisted edit](./assisted-edit) or [Git](./git).
+
+---
+
+## Related
+
+- [Assisted edit](./assisted-edit) — When the CMS is not enough  
+- [Contributing overview](./) — All three paths  
+- [Edit in Git](./git) — Technical workflow
