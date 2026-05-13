@@ -211,7 +211,8 @@
                   "policy/people/acceptable-use-policy"
                 ]
               }
-            ]
+            ],
+            "icon": "scale"
           },
           {
             "group": "Procedures",
