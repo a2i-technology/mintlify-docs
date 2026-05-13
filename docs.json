@@ -252,7 +252,6 @@
           {
             "group": "Guides",
             "pages": [
-              "guides",
               {
                 "group": "Devices",
                 "pages": [
@@ -306,5 +305,14 @@
     "socials": {
       "slack": "https://allied-europe.slack.com"
     }
+  },
+  "background": {
+    "color": {
+      "light": "#000000",
+      "dark": "#1D1D1B"
+    }
+  },
+  "fonts": {
+    "family": "Roboto"
   }
 }
