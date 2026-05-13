@@ -8,7 +8,7 @@ applies_to:
 
 ## Applies to
 
-- [Org Chart](/systems/org/org-chart)
+- [Org Chart](/overview/systems/org/org-chart)
 
 ## Design notes
 
@@ -26,7 +26,7 @@ The definitive **Org Chart** is authored as **`org-chart.mdx`** so it can embed 
 
 - **Single interchange format:** JSON only, described by [`data/org/org-snapshot.schema.json`](https://github.com/a2i-technology/docs/blob/main/data/org/org-snapshot.schema.json).
 - **Build gate:** `scripts/org-snapshot-validate.mjs` runs on `prebuild` / `prestart` (AJV + graph invariants: single root, no cycles, valid references). Bad snapshots **fail the site build**, preventing silent drift.
-- **Contributor-facing detail:** [Org snapshot data](/systems/org/org-data) and [Formatting standards — Org snapshot JSON](/contributing/standards#org-snapshot-json).
+- **Contributor-facing detail:** [Org snapshot data](/overview/systems/org/org-data) and [Formatting standards — Org snapshot JSON](/overview/contributing/standards#org-snapshot-json).
 
 ### Working / concept material
 

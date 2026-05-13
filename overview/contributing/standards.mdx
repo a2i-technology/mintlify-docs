@@ -14,7 +14,7 @@ This page defines the standard for structure, IDs, filenames, and front matter w
 
 | Class | Binding? | IDs | Canonical front-matter reference |
 | ----- | -------- | --- | -------------------------------- |
-| **Policy** | Yes | `POL-*` | [Policy — template](../policy#policy-front-matter-template) |
+| **Policy** | Yes | `POL-*` | [Policy — template](/policy#policy-front-matter-template) |
 | **Decision record** | Yes | `DEC-*` | [Decision log — template](../governance/decision-log#decision-record-template) |
 | **Strategy** | Definitive intent | Path + title; optional `related_policies` | [Strategy front matter](#strategy-front-matter-v1) below |
 | **Procedures / templates / guides / systems** | Varies | Path + title; optional `related_policies` / `POL-*` refs | Common fields below |
@@ -42,7 +42,7 @@ This page defines the standard for structure, IDs, filenames, and front matter w
 | Domains | **ENT** (enterprise), **ENG** (engineering), **PRD** (production), **DIG** (digital), **PPL** (people) |
 | Number | Numeric suffix `001`, `002`, … unique within that domain |
 
-Full detail and template: **[Policy — ID format and front matter](../policy#policy-id-format)**.
+Full detail and template: **[Policy — ID format and front matter](/policy#policy-id-format)**.
 
 ### Decision records (`DEC-*`)
 
@@ -109,9 +109,9 @@ Optional automation hook: **`strategy_theme`** — one of `north-star` | `operat
 
 ## Policy, decision, and programme reminders
 
-- **Policy** — Full YAML template and status labels: **[Policy](../policy)**.
+- **Policy** — Full YAML template and status labels: **[Policy](/policy)**.
 - **Governance** — Decision body structure (Context, Options, Decision, Rationale, Consequences): **[Decision log](../governance/decision-log)**.
-- **Operations** — Programme and portfolio layout: **[Operations](/operations/)** and **[Portfolio](/operations/portfolio/)**. Follow existing programme front matter where used (e.g. `owner`, `status`).
+- **Operations** — Programme and portfolio layout: **[Operations](/overview/operations/)** and **[Portfolio](/overview/operations/portfolio/)**. Follow existing programme front matter where used (e.g. `owner`, `status`).
 
 ---
 
@@ -170,7 +170,7 @@ Use consistent markdown so diffs and tooling stay predictable:
 
 Short list for prompts, CI, or review bots:
 
-1. Every **policy** document has **`policy_id: POL-*`** with domain code ENT, ENG, PRD, DIG, or PPL and **`domain:`** per [Policy](../policy).
+1. Every **policy** document has **`policy_id: POL-*`** with domain code ENT, ENG, PRD, DIG, or PPL and **`domain:`** per [Policy](/policy).
 2. Every **decision** file matches **`YYYY-MM-DD-<slug>.md`** and **`id: DEC-YYYY-MM-DD-<NNN>`** per [Decision log](../governance/decision-log).
 3. **Strategy** pages use [strategy YAML](#strategy-front-matter-v1) and do **not** use policy `id` / `domain` fields.
 4. **Titles** align with a **single H1** unless an agreed nav exception exists.

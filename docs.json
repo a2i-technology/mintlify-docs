@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "luma",
   "name": "Allied OS",
-  "description": "Allied's central hub — strategy, systems, operations, policy, and governance.",
+  "description": "Allied's central hub \u2014 strategy, systems, operations, policy, and governance.",
   "colors": {
     "primary": "#6FC5D0",
     "light": "#6FC5D0",
@@ -17,7 +17,13 @@
     "og:image": "/images/og.png"
   },
   "contextual": {
-    "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
+    "options": [
+      "copy",
+      "view",
+      "assistant",
+      "mcp",
+      "add-mcp"
+    ]
   },
   "navigation": {
     "tabs": [
@@ -27,22 +33,22 @@
           {
             "group": "Strategy",
             "pages": [
-              "strategy/index",
-              "strategy/north-star",
-              "strategy/annual-direction",
+              "overview/strategy/index",
+              "overview/strategy/north-star",
+              "overview/strategy/annual-direction",
               {
                 "group": "Operating model",
                 "pages": [
-                  "strategy/operating-concepts/index",
-                  "strategy/production/index",
-                  "strategy/technology/index"
+                  "overview/strategy/operating-concepts/index",
+                  "overview/strategy/production/index",
+                  "overview/strategy/technology/index"
                 ]
               },
               {
                 "group": "Market & roadmaps",
                 "pages": [
-                  "strategy/market/index",
-                  "strategy/roadmaps/index"
+                  "overview/strategy/market/index",
+                  "overview/strategy/roadmaps/index"
                 ]
               }
             ]
@@ -50,27 +56,27 @@
           {
             "group": "Systems",
             "pages": [
-              "systems/index",
+              "overview/systems/index",
               {
                 "group": "Organisation",
                 "pages": [
-                  "systems/org/functions",
-                  "systems/org/roles-titles",
-                  "systems/org/org-chart",
-                  "systems/org/org-data",
-                  "systems/org/decision-rights",
-                  "systems/org/domains",
-                  "systems/org/cadence",
-                  "systems/org/interfaces"
+                  "overview/systems/org/functions",
+                  "overview/systems/org/roles-titles",
+                  "overview/systems/org/org-chart",
+                  "overview/systems/org/org-data",
+                  "overview/systems/org/decision-rights",
+                  "overview/systems/org/domains",
+                  "overview/systems/org/cadence",
+                  "overview/systems/org/interfaces"
                 ]
               },
               {
                 "group": "Tooling",
                 "pages": [
-                  "systems/tooling/git",
-                  "systems/tooling/linear",
-                  "systems/tooling/google-drive",
-                  "systems/tooling/drata"
+                  "overview/systems/tooling/git",
+                  "overview/systems/tooling/linear",
+                  "overview/systems/tooling/google-drive",
+                  "overview/systems/tooling/drata"
                 ]
               }
             ]
@@ -78,30 +84,30 @@
           {
             "group": "Operations",
             "pages": [
-              "operations/index",
+              "overview/operations/index",
               {
                 "group": "Portfolio",
                 "pages": [
-                  "operations/portfolio/index",
-                  "operations/portfolio/portfolio-index",
-                  "operations/portfolio/codenaming"
+                  "overview/operations/portfolio/index",
+                  "overview/operations/portfolio/portfolio-index",
+                  "overview/operations/portfolio/codenaming"
                 ]
               },
               {
                 "group": "Active programmes",
                 "pages": [
-                  "operations/active/EMBERLANCE/index",
-                  "operations/active/EMBERLANCE/links",
-                  "operations/active/PHOENIX/index",
-                  "operations/active/PHOENIX/links"
+                  "overview/operations/active/EMBERLANCE/index",
+                  "overview/operations/active/EMBERLANCE/links",
+                  "overview/operations/active/PHOENIX/index",
+                  "overview/operations/active/PHOENIX/links"
                 ]
               },
               {
                 "group": "Paused / Completed / Archived",
                 "pages": [
-                  "operations/paused/index",
-                  "operations/completed/index",
-                  "operations/archived/index"
+                  "overview/operations/paused/index",
+                  "overview/operations/completed/index",
+                  "overview/operations/archived/index"
                 ]
               }
             ]
@@ -109,26 +115,30 @@
           {
             "group": "Governance",
             "pages": [
-              "governance/index",
+              "overview/governance/index",
               {
                 "group": "Decision log",
-                "pages": ["governance/decision-log/index"]
+                "pages": [
+                  "overview/governance/decision-log/index"
+                ]
               },
               {
                 "group": "Delegations",
-                "pages": ["governance/delegations/delegations-of-authority"]
+                "pages": [
+                  "overview/governance/delegations/delegations-of-authority"
+                ]
               }
             ]
           },
           {
             "group": "Contributing",
             "pages": [
-              "contributing/index",
-              "contributing/standards",
-              "contributing/writing-style",
-              "contributing/git",
-              "contributing/cms",
-              "contributing/assisted-edit"
+              "overview/contributing/index",
+              "overview/contributing/standards",
+              "overview/contributing/writing-style",
+              "overview/contributing/git",
+              "overview/contributing/cms",
+              "overview/contributing/assisted-edit"
             ]
           }
         ]
@@ -140,7 +150,7 @@
             "group": "Policy",
             "pages": [
               "policy/index",
-              "policy-index",
+              "policy/policy-index",
               {
                 "group": "Enterprise",
                 "pages": [
@@ -206,24 +216,24 @@
           {
             "group": "Procedures",
             "pages": [
-              "procedures/index",
-              "procedures/enterprise/index",
-              "procedures/digital/index",
-              "procedures/engineering/index",
-              "procedures/production/index",
-              "procedures/people/index"
+              "policy/procedures/index",
+              "policy/procedures/enterprise/index",
+              "policy/procedures/digital/index",
+              "policy/procedures/engineering/index",
+              "policy/procedures/production/index",
+              "policy/procedures/people/index"
             ]
           },
           {
             "group": "Templates",
             "pages": [
-              "templates/index",
-              "templates/enterprise/index",
-              "templates/digital/index",
-              "templates/digital/new-digital-template",
-              "templates/engineering/index",
-              "templates/production/index",
-              "templates/people/index"
+              "policy/templates/index",
+              "policy/templates/enterprise/index",
+              "policy/templates/digital/index",
+              "policy/templates/digital/new-digital-template",
+              "policy/templates/engineering/index",
+              "policy/templates/production/index",
+              "policy/templates/people/index"
             ]
           }
         ]
