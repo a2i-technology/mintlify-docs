@@ -1,0 +1,66 @@
+---
+title: "Overview"
+owner: "COS"
+status: "draft"
+---
+
+Mandatory constraints ("what must be true"). Policies are stable, auditable, and reference procedures/templates where needed.
+
+## Domains
+
+**Domains** are **named kinds of work** at Allied: **subject-matter areas** where **activity, risk, standards, and vocabulary** cluster. They give a **shared vocabulary** for **what sort of work or control** you are dealing with. Programme delivery, collaboration in Drive, and execution in Linear **combine** work from several domains; domains describe the **shape of the work and its controls**.
+
+The table below is Allied’s **current domain set** for **grouping** this policy stack (and the matching [procedures](../procedures) and [templates](../templates) collections) so each document sits **with the kind of work it governs**. The definitive definition and list in the **systems** model is [Domains](/overview/systems/org/domains).
+
+## Policy domains
+
+| Domain | Path | Scope |
+| --- | --- | --- |
+| Enterprise | [enterprise](./enterprise) | Company-wide baselines |
+| Engineering | [engineering](./engineering) | Physical engineering design authority |
+| Production | [production](./production) | Manufacturing and supply chain |
+| Digital | [digital](./digital) | Software/platform/data governance |
+| People | [people](./people) | Conduct, ethics, training |
+
+## Policy ID format
+
+`POL-<DOMAIN>-<NUMBER>`
+
+Domains: ENT, ENG, PRD, DIG, PPL
+
+## Policy front-matter template
+
+```yaml
+---
+policy_id: POL-ENG-003
+title: Configuration Management Policy
+domain: engineering
+owner: CTO
+contributors:
+  - Chief Engineer
+status: draft         # draft | active | deprecated
+version: 1.0
+effective_date: 2026-02-01
+last_reviewed: 2026-02-01
+next_review: 2027-02-01
+supersedes: []
+related:
+  enterprise_policies:
+    - POL-ENT-002
+  standards:
+    - ISO9001
+    - ISO27001
+---
+```
+
+## Status labels
+
+- **draft** — Under development; not authoritative
+- **active** — Authoritative definitive policy
+- **deprecated** — No longer in force; retained for history; should reference what superseded it
+
+## Related
+
+- [policy-index](../policy-index) — Full list of active policies and cross-domain navigation (policy · procedures · templates)
+- [procedures](../procedures) — How-to execution steps
+- [templates](../templates) — Checklists and forms
