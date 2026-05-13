@@ -155,7 +155,7 @@
             "group": "Policy",
             "pages": [
               "policy",
-              "policy/index",
+              "policy/index_table",
               {
                 "group": "Enterprise",
                 "pages": [
