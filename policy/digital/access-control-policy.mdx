@@ -1,0 +1,57 @@
+---
+policy_id: POL-DIG-002
+title: Access Control Policy
+sidebarTitle: "Access control"
+domain: digital
+owner: TBD
+status: draft
+related:
+  standards:
+    - ISO27001
+---
+
+> **Seeded from legacy Allied Information Security Policy (admin rights, device access control, account hygiene).** Content carried over for review. Joiner/mover/leaver lifecycle, periodic access reviews, privileged access management, and service account handling are not covered in the legacy doc and need drafting.
+
+## Purpose
+
+To ensure access to Allied systems and information is granted, reviewed, and revoked on a least-privilege, need-to-know basis.
+
+## Scope
+
+Applies to all Allied digital systems and the identities (staff, contractors, services) that access them.
+
+## Roles and responsibilities
+
+| Role | Responsibility |
+| ---- | -------------- |
+| Security Officer | Owns access and permissions management across Allied hardware, software and cloud resources. Reviewed upon every change of staff/terms and conditions of employment, or annually, whichever is sooner. |
+| System owners | Apply access controls to their systems and run periodic reviews |
+
+## Administrator rights
+
+Accounts for routine use must not have administrator privileges. A separate, administrator privileged account with a distinct password must be set up. When logged in as an administrator, users must not browse the internet or access email, other than when strictly necessary for the purpose of completing whatever administrative task they logged on to achieve.
+
+The following staff have administrator rights for their devices:
+
+- Ben Ball (Security Officer)
+
+## Device access control
+
+All devices used to access company data must be secured with at least one of the following: 6-digit PIN, biometrics, or password.
+
+Applications on the device that are used to access company data must be protected with **additional** access control: biometrics, unique PIN, or password (if using PIN or password it must be different from that used to access the device).
+
+## Account hygiene
+
+- User accounts must be removed from devices wherever they are not in regular use.
+- Multi-factor authentication is mandatory wherever possible — see [POL-DIG-004 Password Policy](./password-policy).
+
+## Policy statements
+
+*TBD — gap analysis to add: identity lifecycle (joiner/mover/leaver), authorisation model, periodic access reviews (cadence and evidence), privileged access management, service accounts and machine identities, customer/partner-tenant access.*
+
+## Related
+
+- [POL-DIG-004 Password Policy](./password-policy)
+- [POL-ENT-008 Physical Security Policy](../enterprise/physical-security-policy)
+- ISO 27001:2022 Annex A.5.15–A.5.18, A.8.2–A.8.5

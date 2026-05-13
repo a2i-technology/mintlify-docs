@@ -1,0 +1,73 @@
+---
+title: Edit in git
+owner: DDE
+status: draft
+---
+
+Use this path when you are comfortable with **Git**, **markdown**, and **pull requests**. You get local editing, your own branching model, and full revision history before merge.
+
+**Structure, IDs, filenames, front matter, and rationale rules** — see **[Handbook standards](./standards)**. **Tone and plain English** — see **[Writing style](./writing-style)**.
+
+---
+
+## 1. Create a branch
+
+Create a feature branch from `main` for your changes:
+
+```bash
+git checkout -b your-name/short-description
+```
+
+---
+
+## 2. Make changes with clear commits
+
+- Use descriptive commit messages
+- One logical change per commit where practical
+- Reference related decisions or policies in commit messages when relevant
+
+---
+
+## 3. Follow the structure
+
+- **Strategy** — Definitive intent only; drafts belong in Drive
+- **Policy** — Use the front-matter template; assign policy IDs (POL-&lt;DOMAIN&gt;-&lt;NUMBER&gt;)
+- **Operations** — Programmes and portfolio under `operations/`; see [Operations](../operations)
+- **Governance** — Decision records in `decision-log/`; use the template
+- **Procedures** — How-to steps; add only when policy requires them
+- **Templates** — Checklists and forms; support procedures
+- **Systems** — Function definitions, interfaces, tooling conventions
+- **Handbook design context** — `rationale/` mirror and automation: [Handbook standards — Rationale](./standards#rationale-pages) and [Rationale](/rationale/)
+
+---
+
+## 4. Titles, IDs, and file names {#titles-ids-and-file-names}
+
+Canonical rules live in **[Handbook standards](./standards)** (titles, `POL-*` / `DEC-*`, filenames, strategy YAML, lists/tables). This section only reminds Git authors to apply them before opening a PR.
+
+---
+
+## 5. Update indexes
+
+When adding policies or projects, update the relevant index:
+
+- `policy-index.md`
+- `operations/portfolio/portfolio-index.md`
+
+---
+
+## 6. Submit for review
+
+- Open a pull request
+- Request review from the relevant owner (see policy/project front-matter)
+- Address feedback before merge
+
+---
+
+## Related
+
+- [Handbook standards](./standards) — Full formatting and ID rules
+- [Writing style](./writing-style) — Tone and plain English
+- [Easy edits — CMS](./cms) — No Git required  
+- [Assisted edit](./assisted-edit) — Hand off large or structural work  
+- [Contributing overview](./) — All three paths

@@ -1,0 +1,54 @@
+---
+title: Travel device
+owner: Security Officer
+status: draft
+---
+
+Allied maintains a fleet of dedicated travel devices for use in higher-risk environments. The intent is a digital airgap from primary systems and activities. Before you travel, you will be issued a clean device — either new or fully wiped and freshly re-imaged.
+
+Allow **1–3 hours** for set-up. You will need public Wi-Fi away from Allied locations (a coffee shop or library is usually fine).
+
+## Android burner phones
+
+- **Not** managed by Allied's MDM.
+- Used primarily for tactical comms and co-ordination.
+- Do not sign in to Allied services or messaging groups.
+- Enable disappearing messages in Signal, Telegram, and WhatsApp.
+- Keep faraday-bagged while in the UK.
+
+## iOS and macOS travel devices
+
+### Set up
+
+> **Heads up:** Allied uses Google Sign-In across the productivity stack. Two-factor authentication sometimes requires confirming sign-in via another Google app (e.g. YouTube), which can require a UK-based device. Sign in to all the services and browsers you will need **while still in the UK** to avoid problems abroad.
+
+1. On public Wi-Fi, follow the standard [Managed device](./managed-device) set-up.
+2. After set-up, **forget every Wi-Fi network** stored on the device.
+   - **iOS** — `Settings > Wi-Fi > ⓘ > Forget This Network`
+   - **macOS** — `System Settings > Wi-Fi > … > Forget This Network`
+
+### Deployment
+
+> **Keep faraday-bagged** until you are well clear of the port of entry.
+
+- **iOS** — for initial in-country travel an eSIM with a data package may be necessary. [Saily](https://saily.com/) has been tested by the team and is available in Iru's self-service catalogue.
+- **iOS** — once established in country, a local SIM card is fine.
+- No restrictions on usage, but exercise judgement when using in public or unsecured physical locations.
+- **Always secure internet connections with the VPN** — see [VPN and zero-trust access](./vpn).
+- **macOS** — prefer a full shutdown over log-out or sleep when not in use.
+- Never leave the device unsecured.
+
+### Return
+
+> Perform these steps **before** arrival at the port of departure, then return the device to its faraday bag.
+
+1. Request remote device erasure from the Allied IT team.
+2. **iOS** — remove the SIM card.
+3. Shut down.
+
+## Related
+
+- [Managed device](./managed-device)
+- [VPN and zero-trust access](./vpn)
+- [POL-DIG-005 Network Security Policy](../../policy/digital/network-security-policy)
+- [POL-ENT-008 Physical Security Policy](../../policy/enterprise/physical-security-policy)

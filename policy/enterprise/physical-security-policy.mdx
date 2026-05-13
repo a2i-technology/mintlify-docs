@@ -1,0 +1,85 @@
+---
+policy_id: POL-ENT-008
+title: Physical Security Policy
+sidebarTitle: "Physical security"
+domain: enterprise
+owner: TBD
+status: draft
+related:
+  standards:
+    - ISO27001
+---
+
+> **Seeded from legacy Allied Information Security Policy (physical security section).** Content carried over for review. The legacy doc is written for a no-corporate-premises micro-enterprise; if Allied moves to controlled premises, secure areas and visitor management will need adding.
+
+## Purpose
+
+To protect Allied's premises, equipment, and information assets from unauthorised physical access, damage, and interference.
+
+## Scope
+
+Applies to all Allied-controlled premises, on-site equipment, physical media, and end-user devices.
+
+## Roles and responsibilities
+
+| Role | Responsibility |
+| ---- | -------------- |
+| TBD (policy owner) | Maintains physical security controls |
+| Site leads | Apply controls at their location |
+
+## User access devices
+
+Allied operates a mixed hardware model.
+
+- **Allied employees** are supplied with Allied owned computers and ancillaries. Allied employees may also be supplied with a smartphone. Where employees are not provided with a smartphone they use their personal devices.
+- **Allied advisers, consultants and partners.** Personnel working on behalf of Allied but not employed by Allied bring their own devices to work (BYOD). See [POL-PPL-002 Acceptable Use Policy](../people/acceptable-use-policy) for BYOD requirements.
+
+## Hardware security measures
+
+### Mobile Device Management (MDM)
+
+Allied uses **Iru** as its MDM solution. Allied-owned devices are enrolled in Iru, which is the source of truth for device inventory, configuration baselines (encryption, screen lock, OS version), update policy, and remote wipe. Where this policy describes a device-level control, the expectation is that the control is enforced via Iru where technically possible, rather than relying solely on user action.
+
+### Administrator rights
+
+Accounts for routine use must not have administrator privileges. A separate, administrator privileged account with a distinct password must be set up. When logged in as an administrator, users must not browse the internet or access email, other than when strictly necessary for the purpose of completing whatever administrative task they logged on to achieve.
+
+### Physical security
+
+Allied devices and devices used to access Allied data:
+
+- Must not be left unattended in public places.
+- If left in the care of non-Allied personnel, must be locked or turned off.
+- Must not be left insecure at home and should be concealed from casual view from the outside when not in use.
+
+### Access control
+
+All devices used to access company data must be secured with at least one of the following: 6-digit PIN, biometrics, or password.
+
+### Removable media
+
+Removable media (USB drives, external hard disks, memory cards) must be used in accordance with the organisation's information security policies to prevent data loss, unauthorised access, or malware infections.
+
+- Employees must encrypt sensitive data stored on removable media and ensure it is password-protected.
+- All removable media must be scanned for malware before use and should only be obtained from trusted sources.
+- Usage should be limited to business-critical purposes; unauthorised devices are strictly prohibited.
+- Lost or stolen removable media must be reported immediately to the security officer.
+- Employees must securely dispose of or wipe removable media before reuse or disposal to prevent data leakage.
+
+## Access security
+
+Allied has no corporate premises over which it can exert access control. Work is typically done in managed workspaces, partners' facilities and in employees' homes.
+
+## Paper notebooks
+
+Where Allied personnel use paper notebooks, they must conform to the physical security measures laid out above. A notebook inherits the protective marking of the most sensitive information they contain (see [POL-ENT-004 Data Classification Policy](./data-classification-policy)).
+
+## Policy statements
+
+*TBD — gap analysis to add (especially if Allied takes on controlled premises): secure perimeters, visitor management, secure areas, equipment siting, clear-desk and clear-screen, secure disposal of equipment.*
+
+## Related
+
+- [POL-PPL-002 Acceptable Use Policy](../people/acceptable-use-policy)
+- [POL-ENT-004 Data Classification Policy](./data-classification-policy)
+- ISO 27001:2022 Annex A.7 (Physical controls)

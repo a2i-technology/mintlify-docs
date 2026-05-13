@@ -1,0 +1,79 @@
+---
+title: 'Rationale: ISO 27001 policy placeholders'
+owner: COS
+status: draft
+applies_to:
+  - allied-org-repo/policy-index
+  - allied-org-repo/policy/enterprise/information-security-policy
+  - allied-org-repo/policy/enterprise/risk-assessment-policy
+  - allied-org-repo/policy/enterprise/asset-management-policy
+  - allied-org-repo/policy/enterprise/data-classification-policy
+  - allied-org-repo/policy/enterprise/data-retention-policy
+  - allied-org-repo/policy/enterprise/data-protection-policy
+  - allied-org-repo/policy/enterprise/business-continuity-plan
+  - allied-org-repo/policy/enterprise/physical-security-policy
+  - allied-org-repo/policy/enterprise/vendor-management-policy
+  - allied-org-repo/policy/digital/access-control-policy
+  - allied-org-repo/policy/digital/encryption-policy
+  - allied-org-repo/policy/digital/password-policy
+  - allied-org-repo/policy/digital/network-security-policy
+  - allied-org-repo/policy/digital/vulnerability-management-policy
+  - allied-org-repo/policy/digital/logging-and-monitoring-policy
+  - allied-org-repo/policy/digital/backup-policy
+  - allied-org-repo/policy/digital/change-management-policy
+  - allied-org-repo/policy/digital/software-development-life-cycle-policy
+  - allied-org-repo/policy/digital/incident-response-plan
+  - allied-org-repo/policy/digital/disaster-recovery-plan
+  - allied-org-repo/policy/digital/system-and-information-integrity-policy
+  - allied-org-repo/policy/digital/system-security-planning-policy
+  - allied-org-repo/policy/digital/maintenance-management-policy
+  - allied-org-repo/policy/people/code-of-conduct
+  - allied-org-repo/policy/people/acceptable-use-policy
+---
+
+## Applies to
+
+- [Policy Index](/policy-index)
+- All ISO 27001 placeholder policies under `policy/enterprise/`, `policy/digital/`, and `policy/people/` (listed in the front-matter `applies_to`).
+
+## Design notes
+
+Allied is working towards ISO 27001 compliance. To make the gap visible and to give owners somewhere to write, we created stub placeholder pages for each policy that maps to ISO 27001 in [Drata's policies-to-framework summary](https://help.drata.com/en/articles/7973705-policies-to-framework-summary).
+
+The placeholders are deliberately **draft and minimal** — frontmatter, purpose, scope, roles, a "TBD" policy-statements section, and links to neighbouring policies and Annex A clauses. They are not authoritative until an owner takes them through to `status: active`.
+
+### Seeded from legacy Allied policy
+
+A second pass distributed content from the legacy single-document information security policy (originally titled "A2i Information Security Policy" before the rename to Allied) into the relevant placeholders. Each seeded page carries a callout at the top noting "Seeded from legacy Allied Information Security Policy" and flags the areas that still need drafting. The legacy doc covered information security broadly but did not address several ISO 27001 topics (BCP, DR, logging & monitoring, backup, change management, SDLC, system security planning, maintenance, code of conduct, vendor lifecycle beyond onboarding, retention specifics) — those placeholders remain stubs awaiting a gap-analysis pass.
+
+Company-name references in the seeded text were updated from "A2i" to "Allied" as part of this pass. The gap-analysis pass is the right point to reconcile current operations and references to specific tooling (LastPass, Norton, Slack channels) that may have changed.
+
+### Categorisation logic
+
+The policies map onto Allied's existing five-domain split (defined in [Domains](/systems/org/domains)) as follows:
+
+| Domain | Why ISO 27001 policies sit here |
+|--------|---------------------------------|
+| **Enterprise** | Cross-cutting baselines that apply to the whole company — top-level Information Security Policy, risk, asset management, data classification/retention/protection, BCP, physical security, vendor management. The enterprise domain index already calls out ISO 27001 mapping as in-scope. |
+| **Digital** | Technical controls over Allied's software, platforms, and data — access control, encryption, passwords, network, vulnerability, logging, backup, change, SDLC, incident response, DR, system integrity, system security planning, maintenance. The digital domain index lists software change control, access, secure development, reliability, and data as in-scope. |
+| **People** | User-facing conduct — Code of Conduct and Acceptable Use. The people domain index calls out conduct and ethics. |
+| **Engineering / Production** | Not used for ISO 27001 placeholders. These are physical-engineering and manufacturing domains. The existing Supply Chain Policy under Engineering covers physical-supply suppliers; ISO 27001 vendor management for information-handling third parties sits under Enterprise. |
+
+### Two judgement calls
+
+- **Acceptable Use** placed under People (next to Code of Conduct) rather than Digital, because the policy governs user behaviour, not technical configuration.
+- **Disaster Recovery Plan** placed under Digital as the IT-recovery component, with Business Continuity Plan kept under Enterprise as the broader operational document. Many ISO 27001 implementations treat them as one document; we've split them so each domain owns its own concern.
+
+### What is *not* in this set
+
+Drata's table also lists several policies marked as **not** applicable to ISO 27001 (Business Associate, Breach Notification, Privacy Use & Disclosure, Personal Data Management, Information Governance, Shared Responsibility, Public Cloud PII Protection, AI Governance / Risk Management / SDE, PCI DSS, Internal Privacy, AIMS Plan, System and Services Acquisition). Those are scoped out of this placeholder set. The AI policies in particular are likely needed soon under a separate ISO 42001 or governance driver, but that's a different conversation.
+
+The existing [POL-DIG-001 Information Security Management Plan](/policy/digital/information-security-management-plan) covers Drata's "ISMS Plan 2022" and "ISMS and PIMS Plan" entries. PIMS (Privacy Information Management System, ISO 27701) extension is deferred until needed.
+
+## Related decisions
+
+*No formal `DEC-*` record yet — to be created when the policy set moves from placeholder to active.*
+
+## Changelog
+
+See Git history for this file and for the placeholder pages it covers.

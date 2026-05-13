@@ -1,0 +1,78 @@
+---
+policy_id: POL-DIG-013
+title: System and Information Integrity Policy
+sidebarTitle: "System & information integrity"
+domain: digital
+owner: TBD
+status: draft
+related:
+  standards:
+    - ISO27001
+---
+
+> **Seeded from legacy Allied Information Security Policy (updates, antivirus, auto-run, app sources).** Content carried over for review. Many of the device-level controls below are now enforced via **Iru** (MDM and EDR) rather than left to user action; this needs reflecting through the policy.
+
+## Purpose
+
+To protect Allied systems and information from malware, unauthorised modification, and integrity failures.
+
+## Scope
+
+Applies to all Allied digital systems and the information they process.
+
+## Roles and responsibilities
+
+| Role | Responsibility |
+| ---- | -------------- |
+| TBD (policy owner) | Maintains integrity controls |
+| System owners | Apply controls to their systems |
+
+## Software sources
+
+Only applications sourced from either the Apple, Google or Microsoft store may be installed on devices used to process Allied data. If employees wish to install software that is not sourced from one of these stores, written permission is required from the Allied security officer to do so. All software must be supported by the supplier. Unsupported legacy software must be uninstalled. All installed software must be licensed in accordance with the publisher's recommendations.
+
+## Updates
+
+- All operating systems, firmware and applications must be kept up to date. Automatic updating must be enabled wherever possible.
+- Users must manually check software updates at least once a fortnight.
+- Updates requiring user action must be installed within 14 calendar days of their release date (this may be less than 14 calendar days from user notification if a device has not been online for a few days).
+
+See [POL-DIG-006 Vulnerability Management Policy](./vulnerability-management-policy) for the broader patching process.
+
+## Device hygiene (Allied devices)
+
+- Hard disk encryption must be turned on wherever possible — see [POL-DIG-003 Encryption Policy](./encryption-policy).
+- Any software not in regular use (at least once every 6 months) must be uninstalled.
+- User accounts must be removed from devices wherever they are not in regular use.
+- Auto-run/auto-play must be disabled, or set to 'prompt user' every time new media is introduced.
+
+## BYOD
+
+- All the mandated requirements for Allied devices are **strongly recommended** for BYOD.
+- BYOD must **never** be used to store confidential or higher classification material.
+
+See [POL-PPL-002 Acceptable Use Policy](../people/acceptable-use-policy) for the full BYOD position.
+
+## Endpoint Detection and Response (EDR)
+
+Endpoint protection is provided by **Iru EDR**, deployed and monitored alongside the Iru MDM. All Allied-managed devices that process Allied data must be enrolled and reporting to Iru EDR.
+
+- The solution must include a firewall.
+- All antivirus software must be set to update at least daily.
+- Antivirus software must be set up to initiate on system startup, and to remain running in the background.
+- Antivirus software must be set up to scan the device on which it's installed at least weekly.
+- Users must accept and react to antivirus software recommendations relating to suspicious software, sites and connections.
+- Antivirus software must be set to automatically scan all files upon access.
+- Should a virus/piece of malware be detected, the user must follow the recommended steps to remove it (see [POL-DIG-011 Incident Response Plan](./incident-response-plan)).
+
+## Policy statements
+
+*TBD — gap analysis to add: file integrity monitoring, EDR/MDR coverage, input validation standards for software Allied builds, code-signing.*
+
+## Related
+
+- [POL-DIG-006 Vulnerability Management Policy](./vulnerability-management-policy)
+- [POL-DIG-005 Network Security Policy](./network-security-policy)
+- [POL-DIG-011 Incident Response Plan](./incident-response-plan)
+- [POL-PPL-002 Acceptable Use Policy](../people/acceptable-use-policy)
+- ISO 27001:2022 Annex A.8.7, A.8.8

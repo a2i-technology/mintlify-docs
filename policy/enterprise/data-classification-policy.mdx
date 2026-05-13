@@ -1,0 +1,73 @@
+---
+policy_id: POL-ENT-004
+title: Data Classification Policy
+sidebarTitle: "Data classification"
+domain: enterprise
+owner: TBD
+status: draft
+related:
+  standards:
+    - ISO27001
+---
+
+> **Seeded from legacy Allied Information Security Policy (data protection / protective marking section).** Content carried over for review. The legacy scheme is two-level (Confidential / Strictly Confidential) plus unmarked; ISO 27001 typically expects four-level. Gap analysis pending.
+
+## Purpose
+
+To establish a consistent scheme for classifying information by sensitivity and to define handling requirements for each classification level.
+
+## Scope
+
+Applies to all information held, processed, or transmitted by Allied, regardless of format.
+
+## Roles and responsibilities
+
+| Role | Responsibility |
+| ---- | -------------- |
+| TBD (policy owner) | Maintains the classification scheme |
+| Data owners | Assign and review classifications for data under their control |
+
+## Allied protective marking
+
+### No marking
+
+Contents are not sensitive. It would not be problematic were it exposed to competitors, the national press or uploaded onto the internet for all to see.
+
+### Confidential
+
+If made public, this information would embarrass Allied and could damage its relationship with one or more partners/employees.
+
+- May only be stored in the Allied cloud.
+- Temporary copies downloaded for local editing must be used immediately and destroyed immediately after use.
+- May only be shared with external organisations with the express permission of the originator.
+- Files must be encrypted in transit.
+- The recipient must have agreed to comparable storage security prior to sharing.
+- Hard copies must not be left unaccompanied in public spaces and should be stored in accordance with the physical security guidance for hardware (see [POL-ENT-008 Physical Security Policy](./physical-security-policy)).
+
+### Strictly Confidential
+
+If made public, this information would seriously damage Allied's global reputation, value and market position.
+
+- May only be stored in the Allied cloud in a password protected/limited access folder.
+- Temporary copies downloaded for local editing must be used immediately and destroyed immediately after use.
+- Files may only be shared with external organisations with explicit permission from the CEO and the originator.
+- Files must be encrypted in transit. When using Allied Gmail to share the data, 'Confidential mode' must be used. If recipients require access to a file for their own records, the file must be password protected and the password transmitted by a different channel to the file.
+- The recipient must have agreed to comparable storage security prior to sharing.
+- Hard copies must not be left unaccompanied in public spaces and should be stored in accordance with the physical security guidance for hardware.
+
+## Partner organisations' protective marking
+
+- Where Allied hold protectively marked material originating from a third party (e.g. an industry partner), Allied personnel must store the information in accordance with Allied's own policy for that marking, or the originator's policy if more stringent (and if known).
+- Allied currently have no reciprocal arrangements with other companies regarding the formal transaction of classifications.
+- When in doubt, verify with the information owner and treat the information as Allied Strictly Confidential.
+
+## Handling government PM material
+
+Material marked OFFICIAL SENSITIVE or higher must not be processed or stored on Allied devices without explicit permission from the Allied security officer and an authorised originator. If retained, it must be stored in an access controlled section of the Allied drive with individual file restrictions on downloading put in place. See [UK Government Security Classifications](https://www.gov.uk/government/publications/government-security-classifications).
+
+## Related
+
+- [POL-ENT-005 Data Retention Policy](./data-retention-policy)
+- [POL-ENT-006 Data Protection Policy](./data-protection-policy)
+- [POL-ENT-008 Physical Security Policy](./physical-security-policy)
+- ISO 27001:2022 Annex A.5.12, A.5.13

@@ -1,0 +1,187 @@
+---
+title: Formatting
+owner: COS
+status: draft
+---
+
+This page defines the standard for structure, IDs, filenames, and front matter when you author or review Org Repo content. It is written so a **human or an automated checker** can validate drafts against one source of truth.
+
+**Voice, wording, and vocabulary** (plain English, tone, definitive vs working materials) live in **[Writing style](./writing-style)**.
+
+---
+
+## Doc classes at a glance
+
+| Class | Binding? | IDs | Canonical front-matter reference |
+| ----- | -------- | --- | -------------------------------- |
+| **Policy** | Yes | `POL-*` | [Policy — template](../policy#policy-front-matter-template) |
+| **Decision record** | Yes | `DEC-*` | [Decision log — template](../governance/decision-log#decision-record-template) |
+| **Strategy** | Definitive intent | Path + title; optional `related_policies` | [Strategy front matter](#strategy-front-matter-v1) below |
+| **Procedures / templates / guides / systems** | Varies | Path + title; optional `related_policies` / `POL-*` refs | Common fields below |
+| **Operations** | Portfolio map | Path + title; programme fields as agreed | [Operations](../operations) |
+| **Rationale** | No (commentary) | Path; optional `applies_to:` | [Rationale pages](#rationale-pages) below |
+
+---
+
+## Titles, H1, and sidebar {#titles-h1-and-sidebar}
+
+- **`title` in YAML** — Used for sidebar and browser title. It should **match the page H1** unless reviewers agree a shorter nav label (then H1 stays the full name).
+- **One H1** per page, aligned with `title` as above.
+- **Wording** — Clear and specific (e.g. “Digital policy domain” not “Domain”). Policy document titles usually end with **Policy** where applicable.
+- **`sidebar_position`** — Optional float; lower numbers appear higher in the sidebar. Use when order matters within a section.
+
+---
+
+## Stable IDs
+
+### Policy (`POL-*`)
+
+| Item | Rule |
+| ---- | ---- |
+| Format | `POL-<DOMAIN>-<NUMBER>` |
+| Domains | **ENT** (enterprise), **ENG** (engineering), **PRD** (production), **DIG** (digital), **PPL** (people) |
+| Number | Numeric suffix `001`, `002`, … unique within that domain |
+
+Full detail and template: **[Policy — ID format and front matter](../policy#policy-id-format)**.
+
+### Decision records (`DEC-*`)
+
+| Item | Rule |
+| ---- | ---- |
+| Format | `DEC-YYYY-MM-DD-<NNN>` |
+| File name | `YYYY-MM-DD-<slug>.md` |
+| Increment | `<NNN>` for multiple decisions on the same day |
+
+**[Decision log — naming and template](../governance/decision-log)**
+
+### Everything else
+
+**Strategy, procedures, templates, guides, systems, operations** — **No shared ID scheme** today. Identify by **path** and **`title`**. Optional `related_policies` (or policy lists in front matter) may reference `POL-*` ids; repeat important links in the body.
+
+**Strategy pages** do **not** use `POL-*` as document id or `domain:` like policies.
+
+---
+
+## File names and URL slugs
+
+- **Kebab-case** file names: `my-topic.md`, not `My Topic.md`.
+- **Decision log** files must match `YYYY-MM-DD-<slug>.md`.
+- **Git-authored files** — Prefer a stable kebab-case slug aligned with the title.
+- **Renames** — Avoid renaming published files without an index update, redirect, or explicit link fix (`onBrokenLinks` is strict in this site).
+
+---
+
+## Org snapshot JSON (`data/org/`) {#org-snapshot-json}
+
+The handbook **Org Chart** renders from committed **JSON** in `data/org/` (default: `current.json`). The shape is fixed by `data/org/org-snapshot.schema.json` and checked in CI via `npm run check:org-snapshot` (also runs on `prebuild` / `prestart`).
+
+- **Do not** hand-edit without matching the schema; the build will fail.
+- **Source of truth for modelling** is the People app; the repo holds **published** snapshots. Workflow and schema ownership: **[Org snapshot data](../systems/org/org-data)**.
+
+---
+
+## Strategy front matter (v1) {#strategy-front-matter-v1}
+
+Use for **new and updated** strategy pages. Include recommended keys in Git even if the CMS does not expose every field.
+
+```yaml
+---
+title: Short title for nav and SEO
+owner: Head of Strategy    # Or CEO, CTO, etc. per accountable role; match CMS owner options where used
+status: draft              # draft | active | deprecated
+last_reviewed: 2026-04-05
+next_review: 2027-04-05
+contributors:              # Optional
+  - CEO
+related_policies:          # Optional — POL ids only; link in body too
+  - POL-DIG-001
+# hide_status_banner: true   # Optional — suppress draft/deprecated ribbon on this page only
+---
+```
+
+On the **live site**, `status: draft` or `status: deprecated` shows a coloured ribbon at the top of the page (handbook docs only; not the rationale mirror tree). To turn ribbons off everywhere after section v1 is complete, set `customFields.showDocStatusBanners` to `false` in **`docusaurus.config.ts`**.
+
+Do **not** put policy **`policy_id: POL-*`** or **`domain:`** on strategy pages.
+
+Optional automation hook: **`strategy_theme`** — one of `north-star` | `operating-concepts` | `roadmaps` | `market` | `technology` | `production` | `annual-direction` (should match folder intent).
+
+---
+
+## Policy, decision, and programme reminders
+
+- **Policy** — Full YAML template and status labels: **[Policy](../policy)**.
+- **Governance** — Decision body structure (Context, Options, Decision, Rationale, Consequences): **[Decision log](../governance/decision-log)**.
+- **Operations** — Programme and portfolio layout: **[Operations](/operations/)** and **[Portfolio](/operations/portfolio/)**. Follow existing programme front matter where used (e.g. `owner`, `status`).
+
+---
+
+## Folder and lens structure
+
+High-level placement:
+
+- **Strategy** — Definitive intent only; drafts in Drive until promoted.
+- **Policy** — Mandatory controls; use policy template and `POL-*`.
+- **Procedures / templates** — Linked to policy stack by domain.
+- **Systems** — Org model, tooling conventions.
+- **Operations** — Portfolio and programmes.
+- **Guides** — Practical how-tos.
+- **Governance** — Decisions and delegations.
+- **Rationale** — Design commentary mirror; not binding. See **[Rationale](/rationale/)**.
+
+Wireframe: **`docs/allied-org-repo/.site-structure.md`** (repository file).
+
+---
+
+## Indexes to keep in sync
+
+When you add or remove major entries, update:
+
+- `policy-index.md`
+- `operations/portfolio/portfolio-index.md` (when programmes change)
+
+---
+
+## Rationale pages {#rationale-pages}
+
+- **Purpose** — Commentary on structure and wording; **not** a second copy of binding policy or strategy text.
+- **Body** — Start with **“Applies to”** (or **“What this explains”**) with **markdown links** to each definitive page discussed. Cite `POL-*` / `DEC-*` in prose when relevant.
+- **YAML** — `unlisted: true`, `status: draft` typical; optional `applies_to:` list of stable paths (links in body still required).
+- **Archive** — When a definitive page is removed, move the rationale file to `rationale/_archived/…` with tombstone front matter. See `rationale/_archived/README.md` in the repo.
+- **When to create** — Add a rationale page when there is genuine design context worth recording. Not every handbook page needs one.
+
+---
+
+## Lists, markdown, and tables {#lists-markdown-and-tables}
+
+Use consistent markdown so diffs and tooling stay predictable:
+
+| Use | Convention |
+| --- | ---------- |
+| Unordered lists | `-` at line start (hyphen + space). Avoid mixing `*` in the same repo. |
+| Ordered steps | `1.` `2.` `3.` for sequences that must be followed in order. |
+| Nesting | Indent nested items with **two spaces**. |
+| Tables | Prefer pipes `|` for comparisons, matrices, and “if / then” summaries. |
+| Code blocks | Fenced blocks with a language tag where applicable (`yaml`, `bash`, `md`). |
+| Links | Prefer **root-relative** doc links `/...` or **relative** links between neighbour pages so `onBrokenLinks` can validate. |
+
+---
+
+## Machine-readable rule summary
+
+Short list for prompts, CI, or review bots:
+
+1. Every **policy** document has **`policy_id: POL-*`** with domain code ENT, ENG, PRD, DIG, or PPL and **`domain:`** per [Policy](../policy).
+2. Every **decision** file matches **`YYYY-MM-DD-<slug>.md`** and **`id: DEC-YYYY-MM-DD-<NNN>`** per [Decision log](../governance/decision-log).
+3. **Strategy** pages use [strategy YAML](#strategy-front-matter-v1) and do **not** use policy `id` / `domain` fields.
+4. **Titles** align with a **single H1** unless an agreed nav exception exists.
+5. **Filenames** are **kebab-case** except decision-log date pattern.
+6. **Rationale** pages include **Applies to** links and are listed in `src/generated/rationaleDocIds.ts`.
+7. **Style** (plain English, tone) — enforce via **[Writing style](./writing-style)**.
+
+---
+
+## Related
+
+- [Writing style](./writing-style) — Tone, plain English, and vocabulary (definitive vs working materials)
+- [Edit in Git](./git) — Branch, commit, PR workflow
+- [Contributing overview](./) — CMS and assisted edit

@@ -1,0 +1,49 @@
+---
+title: Authenticator
+owner: Security Officer
+status: draft
+---
+
+Multi-factor authentication is mandatory wherever supported — see [POL-DIG-004 Password Policy](../../policy/digital/password-policy). This guide covers picking and using a TOTP authenticator app.
+
+## Supported apps
+
+Allied does not mandate a single vendor. Pick one of these:
+
+- [Authy](https://www.authy.com/)
+- [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2)
+- [Microsoft Authenticator](https://www.microsoft.com/en-us/security/mobile-authenticator-app)
+
+> Whatever you pick must support TOTP (time-based one-time passwords) and let you back up or export accounts securely.
+
+## Quick start (iOS and Android)
+
+1. Install your chosen authenticator from the App Store or Google Play.
+2. Open the app and tap **+** (or **Add Account**).
+3. Scan the QR code shown by the service you are securing (e.g. the Allied SSO portal).
+4. Enter the 6-digit code from the app to confirm set-up.
+5. Save any backup or recovery codes the service offers — store them offline.
+
+## Desktop (optional)
+
+Authy offers a desktop client for Windows and macOS:
+
+1. Download Authy for Desktop.
+2. Sign in with your phone number.
+3. Enable multi-device only if you actually need to sync across devices.
+4. Add accounts by scanning QR codes from your phone or entering the secret manually.
+
+## Best practices
+
+- **Backup and recovery** — store recovery codes offline (e.g. paper in a locked drawer).
+- **App lock** — enable biometrics or PIN-lock on the authenticator app.
+- **Device security** — treat the authenticator like a password: strong passcode, encryption on.
+- **Multi-device sync** (Authy only) — use sparingly; disable if you do not need it.
+- **Account hygiene** — remove tokens for services you no longer use.
+- **Updates** — install app updates promptly.
+
+## Related
+
+- [POL-DIG-004 Password Policy](../../policy/digital/password-policy)
+- [POL-DIG-002 Access Control Policy](../../policy/digital/access-control-policy)
+- [Password manager](./password-manager)

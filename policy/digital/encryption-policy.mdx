@@ -1,0 +1,50 @@
+---
+policy_id: POL-DIG-003
+title: Encryption Policy
+sidebarTitle: "Encryption"
+domain: digital
+owner: TBD
+status: draft
+related:
+  standards:
+    - ISO27001
+---
+
+> **Seeded from legacy Allied Information Security Policy (HDD encryption, in-transit, removable media).** Content carried over for review. Approved algorithms, key management, certificate management, and cryptographic exception handling are not covered in the legacy doc and need drafting.
+
+## Purpose
+
+To define how Allied uses cryptography to protect the confidentiality and integrity of information at rest and in transit.
+
+## Scope
+
+Applies to all Allied data, systems, and communications.
+
+## Roles and responsibilities
+
+| Role | Responsibility |
+| ---- | -------------- |
+| TBD (policy owner) | Maintains encryption standards and approved algorithms |
+| System owners | Apply encryption to data and communications under their control |
+
+## Encryption at rest
+
+- Hard disk encryption must be turned on wherever possible. ([Windows](https://support.microsoft.com/en-us/windows/turn-on-device-encryption-0c453637-bc88-5f74-5105-741561aae838) · [macOS](https://support.apple.com/en-us/HT204837))
+- Sensitive data stored on removable media (USB drives, external disks, memory cards) must be encrypted and password-protected. See [POL-ENT-008 Physical Security Policy](../enterprise/physical-security-policy) for the full removable media controls.
+
+## Encryption in transit
+
+- Files must be encrypted in transit when shared with external organisations.
+- For Strictly Confidential material shared via Allied Gmail, 'Confidential mode' must be used.
+- If recipients require access to a file for their own records, the file must be password protected and the password transmitted by a different channel to the file.
+
+## Policy statements
+
+*TBD — gap analysis to add: approved algorithms and key sizes, key management lifecycle (generation, storage, rotation, destruction), certificate management, prohibition of weak ciphers, cryptographic exceptions process.*
+
+## Related
+
+- [POL-ENT-004 Data Classification Policy](../enterprise/data-classification-policy)
+- [POL-ENT-008 Physical Security Policy](../enterprise/physical-security-policy)
+- [POL-DIG-004 Password Policy](./password-policy)
+- ISO 27001:2022 Annex A.8.24

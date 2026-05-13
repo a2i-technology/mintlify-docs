@@ -1,0 +1,67 @@
+---
+policy_id: POL-DIG-005
+title: Network Security Policy
+sidebarTitle: "Network security"
+domain: digital
+owner: TBD
+status: draft
+related:
+  standards:
+    - ISO27001
+---
+
+> **Seeded from legacy Allied Information Security Policy (firewalls, VPN, home router, public networks, browser).** Content carried over for review. The legacy doc is written for a no-corporate-network micro-enterprise; cloud network segmentation, third-party connections, and monitoring are not covered and need drafting.
+
+## Purpose
+
+To protect Allied's networks and the information they carry from unauthorised access, misuse, and disruption.
+
+## Scope
+
+Applies to all networks operated by or on behalf of Allied, including cloud networks, office networks, and remote access. Allied personnel may connect their devices to the internet using their domestic services (home internet and mobile device data services etc) or public services provided at facilities visited for work or during travel. Allied does not have access to its own corporate network or internet service provision.
+
+## Roles and responsibilities
+
+| Role | Responsibility |
+| ---- | -------------- |
+| TBD (policy owner) | Maintains network security standards |
+| Network/system owners | Apply controls in their environments |
+
+## Firewalls
+
+As part of our commitment to maintaining robust cybersecurity measures, it is essential that all employees ensure their computer's firewall is enabled at all times. Firewalls act as a critical barrier between our internal network and potential external threats, preventing unauthorised access and safeguarding sensitive company data. Verify that your firewall is enabled, and reach out to the security officer if you require any assistance.
+
+If a non-Apple desktop, laptop or mobile device is used to process Allied data, the antivirus solution must include a firewall (see [POL-DIG-013 System and Information Integrity Policy](./system-and-information-integrity-policy)).
+
+## Zero-Trust Network Access (ZTNA)
+
+Allied uses **Cloudflare Access** as its Zero-Trust Network Access provider. Access to Allied applications is gated by Cloudflare Access policies (identity, device posture, and context) rather than by a network-perimeter VPN. See [POL-DIG-002 Access Control Policy](./access-control-policy) for the identity and authorisation side.
+
+## Traffic protection on unsecured networks
+
+**Cloudflare WARP** must be active on any device used on an unsecured network (public Wi-Fi, hotspots, untrusted home networks) to encrypt traffic in transit and route it through Cloudflare's network.
+
+## Home router setup
+
+If connecting to the internet through a private domestic router, the following steps must be taken to secure the domestic network:
+
+- The administrator settings password must be changed from the manufacturer's default.
+- The in-built firewall must be active and exemptions must be minimised.
+
+## Public networks and hotspots
+
+Allied personnel should minimise their reliance on public networks, particularly Guest networks and those freely available to the wider public, whenever possible. Wherever possible, hotspotting from a personal mobile device is preferable.
+
+## Browser security
+
+When using a web browser for Allied business ensure it is one that automatically highlights malicious or dangerous content and that this feature is enabled and set to either standard or enhanced functionality.
+
+## Policy statements
+
+*TBD — gap analysis to add: cloud network segmentation, perimeter controls and security groups, third-party connections, network monitoring, wireless standards if Allied takes on controlled premises.*
+
+## Related
+
+- [POL-DIG-013 System and Information Integrity Policy](./system-and-information-integrity-policy)
+- [POL-DIG-002 Access Control Policy](./access-control-policy)
+- ISO 27001:2022 Annex A.8.20–A.8.23

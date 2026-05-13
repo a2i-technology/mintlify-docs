@@ -1,0 +1,55 @@
+---
+owner: COS
+status: draft
+---
+
+# Operations
+
+Portfolio map of organisational commitments and project definitions. This is **not** task execution — tasks live in Linear.
+
+## Structure
+
+- **portfolio** — Index and overview
+- **active** — Currently active projects
+- **paused** — Paused projects
+- **completed** — Completed projects
+- **archived** — Archived projects
+
+Folder placement signals status. Each programme has its own folder (e.g. **active/EMBERLANCE/**) containing **index.md** (main doc) and **links.md** (links table). The CMS has one collection per programme; editors edit content there. Moving a programme between states (e.g. active → paused) is a developer change: update the programme’s collection `folder` in `static/admin/config.yml` and move the programme folder in git.
+
+## Project overview template
+
+```yaml
+---
+title: Project Alpha
+owner: Delivery Lead
+status: active        # active | paused | completed | archived
+priority: P1          # optional; folder placement is primary signal
+start_date: YYYY-MM-DD
+---
+
+# Project Alpha
+
+## Intent
+Why this exists; what outcome we are aiming for.
+
+## Scope
+In-scope / out-of-scope boundaries.
+
+## Success Criteria
+How we will know it worked.
+
+## Key Decisions
+- [YYYY-MM-DD] Decision summary → link to decisions/ record
+
+## Links
+- Drive folder: <drive-link>
+- Linear project: <linear-link>
+- Partner agreements (signed): <commercial-drive-link>
+```
+
+## Why operations is not Linear
+
+- **Linear** tracks execution (tasks, tickets)
+- **Git operations** tracks structure and priority (portfolio map)
+- Each project README links to Linear and Drive — no mirroring of issues in Git

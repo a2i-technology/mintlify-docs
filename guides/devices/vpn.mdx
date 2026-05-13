@@ -1,0 +1,35 @@
+---
+title: VPN + ZTNA
+owner: Security Officer
+status: draft
+---
+
+How Allied secures network traffic and access to internal applications.
+
+Allied does not run a traditional perimeter VPN. Two Cloudflare products do the work — see [POL-DIG-005 Network Security Policy](../../policy/digital/network-security-policy) for the policy position.
+
+## Cloudflare WARP — traffic protection on unsecured networks
+
+**Cloudflare WARP** must be active on any device used on an unsecured network (public Wi-Fi, hotspots, untrusted home networks). It encrypts traffic in transit and routes it through Cloudflare's network.
+
+1. Install Cloudflare WARP from Iru's self-service catalogue (it is also pushed automatically to managed devices).
+2. Sign in with your Allied identity when prompted.
+3. Toggle WARP on before using untrusted networks.
+
+## Cloudflare Access — zero-trust access to Allied apps
+
+**Cloudflare Access** gates access to Allied applications based on identity, device posture, and context — there is no "connect to the corporate network first" step. You will see a Cloudflare Access sign-in challenge the first time you reach a protected app from a new device or browser.
+
+If you are blocked unexpectedly, ask in `#it-support` on Slack — it is usually a device posture or session issue rather than a VPN failure.
+
+## Best practices
+
+- Always run WARP on public or untrusted Wi-Fi.
+- Keep the WARP client updated (Iru handles this on managed devices).
+- Do not install third-party consumer VPNs alongside WARP — they can route traffic in conflicting ways.
+
+## Related
+
+- [POL-DIG-005 Network Security Policy](../../policy/digital/network-security-policy)
+- [POL-DIG-002 Access Control Policy](../../policy/digital/access-control-policy)
+- [Travel device](./travel-device)

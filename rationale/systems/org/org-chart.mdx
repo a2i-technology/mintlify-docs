@@ -1,0 +1,47 @@
+---
+title: 'Rationale: Org Chart'
+owner: COS
+status: draft
+applies_to:
+  - allied-org-repo/systems/org/org-chart
+---
+
+## Applies to
+
+- [Org Chart](/systems/org/org-chart)
+
+## Design notes
+
+### Why this page is MDX
+
+The definitive **Org Chart** is authored as **`org-chart.mdx`** so it can embed a React **OrgSnapshotVisualizer**: a lightweight **HTML** tree (from primary `parent_id` links) plus a **table** for scanning. That matches the plan to keep the handbook useful without maintaining diagram **images** or slide decks as source of truth.
+
+### System of record vs handbook
+
+- **People app** (AlliedOS, e.g. `/people`) is intended to be the **workspace** for org **modelling**: current structure, **scenarios** (e.g. forecasts), diffs, and richer navigation. **Zelt** stays **HRIS** (payroll, personal data); it is not the design tool for hypothetical orgs.
+- The handbook page reflects a **published JSON snapshot** committed to the repo: [`data/org/current.json`](https://github.com/a2i-technology/docs/blob/main/data/org/current.json) (path in the docs site repo). That gives **reproducible builds**, **PR review** of structural changes, and alignment with “Company as Code” for **approved** org shape.
+- **Rationale:** editors should not need to hand-edit nested JSON for day-to-day org design; they use the app. The repo snapshot is updated when leadership is ready to **freeze** a version for the handbook (manual export → PR for MVP).
+
+### Contract and validation
+
+- **Single interchange format:** JSON only, described by [`data/org/org-snapshot.schema.json`](https://github.com/a2i-technology/docs/blob/main/data/org/org-snapshot.schema.json).
+- **Build gate:** `scripts/org-snapshot-validate.mjs` runs on `prebuild` / `prestart` (AJV + graph invariants: single root, no cycles, valid references). Bad snapshots **fail the site build**, preventing silent drift.
+- **Contributor-facing detail:** [Org snapshot data](/systems/org/org-data) and [Formatting standards — Org snapshot JSON](/contributing/standards#org-snapshot-json).
+
+### Working / concept material
+
+Higher-level options (tree vs graph, scenario views, AI workflows) are explored in the **org-reset** working area, e.g. **`people-app-concept-design.md`** and **`org_chart_data_structure_options.md`** (paths relative to the Allied workspace `org-reset/` folder — not published in the handbook sidebar).
+
+### CMS (Decap)
+
+The **Systems — Org** CMS collection is oriented to **markdown** files. **`org-chart.mdx`** may be **Git-first** until the CMS collection explicitly supports MDX for this slug, if editors need in-browser edits for the prose wrapper.
+
+**Maintainer capture (Git-only):** `docs/allied-org-repo/rationale/_agent-handoffs/2026-04-07-org-reset-and-transcript-capture.md` (transcript + org-reset matrix for this programme).
+
+## Related decisions
+
+- Link `DEC-*` records when a formal decision record exists for the People app or snapshot publish process.
+
+## Changelog
+
+See Git history for this file and for the definitive page.

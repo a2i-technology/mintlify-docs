@@ -1,0 +1,29 @@
+---
+title: "Rationale: Org snapshot data"
+owner: COS
+status: draft
+applies_to:
+  - allied-org-repo/systems/org/org-data
+---
+
+## Applies to
+
+- [Org snapshot data](/systems/org/org-data)
+
+## Design notes
+
+The **JSON snapshot + schema + build validator** pattern exists so the handbook can show an **auditable, reproducible** org view without making raw JSON the day-to-day editing surface. The **People app** (AlliedOS) is the intended workspace for structure and scenarios; the repo holds a **published** file (`data/org/current.json`) that must pass `org-snapshot-validate.mjs`. That split mirrors the wider rule: **definitive Git record** vs **tools where work happens** (`org-reset/people-app-concept-design.md`, `org-reset/org-reset-master-plan.md`).
+
+**Distinguish** this from the **analytics / medallion data pipeline** described in `org-reset/data_pipeline_breakdown_dagster_medallion_stack.md` (market, CRM, S3, Athena, etc.). That pipeline is **not** the system of record for internal reporting lines unless you explicitly add an ingest later.
+
+Modelling patterns (adjacency list, optional graph edges, position vs person) are explored in `org-reset/org_chart_data_structure_options.md`; the **contract** on disk is whatever `org-snapshot.schema.json` and the validator enforce.
+
+**Maintainer capture (Git-only):** `docs/allied-org-repo/rationale/_agent-handoffs/2026-04-07-org-reset-and-transcript-capture.md`
+
+## Related decisions
+
+*Link `DEC-*` records when relevant.*
+
+## Changelog
+
+See Git history for this file and for the definitive page.

@@ -1,0 +1,37 @@
+---
+title: Engineering Policy Domain
+owner: CTO
+status: draft
+---
+
+## Long-form meaning and scope
+
+**Engineering** policies cover physical engineering design authority. This domain governs how we establish and maintain technical correctness, configuration baselines, and verification logic for physical systems.
+
+## Scope boundaries
+
+- **Configuration management** — Design baselines, change control, versioning of engineering artefacts
+- **Design assurance** — Design review, approval authorities, design freeze
+- **Verification and validation (V&V)** — Test strategy, acceptance criteria, evidence of compliance
+- **Design authority** — Who can approve design changes; handover to production
+
+## What belongs here
+
+- POL-ENG-xxx policies
+- Configuration management policy
+- Design assurance policy
+- V&V policy
+- Engineering change control (distinct from production change)
+
+## What does not belong here
+
+- Manufacturing execution (→ production/)
+- Software change control (→ digital/)
+- Enterprise document control (→ enterprise/)
+
+## Domain distinction: Engineering vs Production
+
+- **Engineering** = design authority, technical correctness, configuration baselines, verification logic
+- **Production** = repeatable realisation of approved designs; manufacturing execution, supplier control, inspection, traceability
+
+The tension between "change" (engineering) and "stability" (production) is productive and necessary.
