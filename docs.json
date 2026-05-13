@@ -33,7 +33,7 @@
           {
             "group": "Strategy",
             "pages": [
-              "overview/strategy/index",
+              "overview/strategy",
               "overview/strategy/north-star",
               "overview/strategy/annual-direction",
               {
@@ -51,12 +51,13 @@
                   "overview/strategy/roadmaps/index"
                 ]
               }
-            ]
+            ],
+            "icon": "compass"
           },
           {
             "group": "Systems",
             "pages": [
-              "overview/systems/index",
+              "overview/systems",
               {
                 "group": "Organisation",
                 "pages": [
@@ -79,12 +80,13 @@
                   "overview/systems/tooling/drata"
                 ]
               }
-            ]
+            ],
+            "icon": "network"
           },
           {
             "group": "Operations",
             "pages": [
-              "overview/operations/index",
+              "overview/operations",
               {
                 "group": "Portfolio",
                 "pages": [
@@ -110,12 +112,13 @@
                   "overview/operations/archived/index"
                 ]
               }
-            ]
+            ],
+            "icon": "cog"
           },
           {
             "group": "Governance",
             "pages": [
-              "overview/governance/index",
+              "overview/governance",
               {
                 "group": "Decision log",
                 "pages": [
@@ -128,18 +131,20 @@
                   "overview/governance/delegations/delegations-of-authority"
                 ]
               }
-            ]
+            ],
+            "icon": "scale"
           },
           {
             "group": "Contributing",
             "pages": [
-              "overview/contributing/index",
+              "overview/contributing",
               "overview/contributing/standards",
               "overview/contributing/writing-style",
               "overview/contributing/git",
               "overview/contributing/cms",
               "overview/contributing/assisted-edit"
-            ]
+            ],
+            "icon": "pen-line"
           }
         ]
       },
@@ -149,8 +154,8 @@
           {
             "group": "Policy",
             "pages": [
-              "policy/index",
-              "policy/policy-index",
+              "policy",
+              "policy/index_table",
               {
                 "group": "Enterprise",
                 "pages": [
@@ -211,30 +216,33 @@
                   "policy/people/acceptable-use-policy"
                 ]
               }
-            ]
+            ],
+            "icon": "book-open"
           },
           {
             "group": "Procedures",
             "pages": [
-              "policy/procedures/index",
+              "policy/procedures",
               "policy/procedures/enterprise/index",
               "policy/procedures/digital/index",
               "policy/procedures/engineering/index",
               "policy/procedures/production/index",
               "policy/procedures/people/index"
-            ]
+            ],
+            "icon": "file-check"
           },
           {
             "group": "Templates",
             "pages": [
-              "policy/templates/index",
+              "policy/templates",
               "policy/templates/enterprise/index",
               "policy/templates/digital/index",
               "policy/templates/digital/new-digital-template",
               "policy/templates/engineering/index",
               "policy/templates/production/index",
               "policy/templates/people/index"
-            ]
+            ],
+            "icon": "layout-template"
           }
         ]
       },
@@ -244,7 +252,7 @@
           {
             "group": "Guides",
             "pages": [
-              "guides/index",
+              "guides",
               {
                 "group": "Devices",
                 "pages": [
@@ -266,7 +274,8 @@
               "guides/set-up-partner-subdomain",
               "guides/set-up-partner-onboarding",
               "guides/set-up-email-signature"
-            ]
+            ],
+            "icon": "presentation"
           }
         ]
       }
